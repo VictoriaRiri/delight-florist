@@ -18,17 +18,19 @@
         <p class="font-serif italic text-xl tracking-widest text-[#D4A5A5] z-10">Delight Florist</p>
     </div>
 
-    <nav id="main-nav" class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 transition-all duration-700">
-        <div class="flex items-center gap-4">
-            <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
-            <h1 class="text-xl font-serif tracking-tighter text-[#8B5E5E]">Delight Florist</h1>
-        </div>
-        <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-bold">
-            <a href="index.html" class="hover:text-[#D4A5A5] transition border-b border-[#D4A5A5]">Home</a>
-            <a href="gallery.html" class="hover:text-[#D4A5A5] transition">Gallery</a>
-            <a href="https://wa.me/254769875366" target="_blank" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Order Now</a>
-        </div>
-    </nav>
+    <nav id="main-nav" class="fixed top-0 w-full p-6 md:p-12 flex flex-col md:flex-row justify-between items-center z-50 transition-all duration-700 bg-[#FCF9F5]/80 backdrop-blur-md md:bg-transparent">
+    <div class="flex items-center gap-4 mb-4 md:mb-0">
+        <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
+        <h1 class="text-xl font-serif tracking-tighter text-[#8B5E5E]">Delight Florist</h1>
+    </div>
+    
+    <div class="flex space-x-6 md:space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-bold">
+        <a href="index.html" class="hover:text-[#D4A5A5] transition border-b border-[#D4A5A5]">Home</a>
+        <a href="gallery.html" class="hover:text-[#D4A5A5] transition">Gallery</a>
+        <a href="https://wa.me/254769875366" target="_blank" class="bg-[#D4A5A5] text-white px-5 py-2 md:px-8 md:py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Order</a>
+    </div>
+</nav>
+
 
     <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-[#FCF9F5]">
         <div id="hero-petal-container" class="absolute inset-0 pointer-events-none"></div>
