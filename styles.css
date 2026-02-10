@@ -1,48 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;700&display=swap');
 
 body {
     font-family: 'Outfit', sans-serif;
-    -webkit-font-smoothing: antialiased;
+    background-color: #FCF9F5;
 }
 
 .font-serif {
     font-family: 'Playfair Display', serif;
 }
 
-/* Diagonal Masking for Premium Reveal */
-.diagonal-mask {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-    transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-/* Petal Loading Elements */
-.petal {
-    position: absolute;
-    background: #f8dae2;
-    border-radius: 50% 0 50% 50%;
-    opacity: 0.5;
-    pointer-events: none;
-    filter: blur(1px);
-}
-
-/* Navigation Scroll Effect Classes */
+/* Smooth Nav Scroll */
 .nav-scrolled {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-}
-
-/* Gallery Masonry (For gallery.html) */
-.masonry-grid {
-    column-count: 3;
-    column-gap: 2rem;
-}
-@media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
-@media (max-width: 640px) { .masonry-grid { column-count: 1; } }
-
-.masonry-item {
-    break-inside: avoid;
-    margin-bottom: 2rem;
+    background: rgba(252, 249, 245, 0.95);
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    box-shadow: 0 10px 30px rgba(139, 94, 94, 0.05);
 }
