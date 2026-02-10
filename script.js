@@ -1,55 +1,61 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // Petal Generator Function
-function createPetal(targetId) {
-    const container = document.getElementById(targetId);
+function createPetal(containerId) {
+    const container = document.getElementById(containerId);
     if (!container) return;
+    
     const petal = document.createElement('div');
     petal.className = 'petal';
-    const size = Math.random() * 15 + 10 + 'px';
+    
+    // Randomize Petal Properties
+    const size = Math.random() * 12 + 8 + 'px';
     petal.style.width = size;
     petal.style.height = size;
     petal.style.left = Math.random() * 100 + 'vw';
-    petal.style.top = '-10%';
+    petal.style.top = '-5%';
+    petal.style.backgroundColor = ['#f8dae2', '#fce4ec', '#fbcfe8'][Math.floor(Math.random() * 3)];
+    
     container.appendChild(petal);
 
     gsap.to(petal, {
-        y: '110vh',
+        y: '105vh',
         x: '+=100',
         rotation: 360,
-        duration: Math.random() * 5 + 5,
+        duration: Math.random() * 4 + 4,
         ease: "none",
         onComplete: () => petal.remove()
     });
 }
 
-// Start Loader Petals
-const loaderInterval = setInterval(() => createPetal('petal-container-loader'), 300);
+// Start Loader Petals Immediately
+const loaderInterval = setInterval(() => createPetal('loader-petal-container'), 150);
 
-// Close Loader and Start Hero
+// Close Loader Fast (2 seconds)
 window.addEventListener('load', () => {
     setTimeout(() => {
         clearInterval(loaderInterval);
         gsap.to("#loader", {
-            opacity: 0, duration: 1.5, onComplete: () => {
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => {
                 document.getElementById('loader').style.display = 'none';
-                // Hero Animation
+                // Hero Text Entrance
                 const tl = gsap.timeline();
-                tl.to("#hero-title", { opacity: 1, y: -20, duration: 1.5 })
-                  .to("#hero-poem", { opacity: 1, duration: 1.5 }, "-=0.5")
-                  .to("#hero-cta", { opacity: 1, duration: 1 }, "-=0.5");
+                tl.to("#hero-title", { opacity: 1, y: -20, duration: 1 })
+                  .to("#hero-poem", { opacity: 1, y: -10, duration: 1 }, "-=0.5");
                 
-                // Start Hero Background Petals
-                setInterval(() => createPetal('hero-petal-canvas'), 800);
+                // Keep Hero Petals falling gently
+                setInterval(() => createPetal('hero-petal-container'), 600);
             }
         });
-    }, 2000);
+    }, 2000); 
 });
 
-// Reveal Sections
+// Scroll Reveals
 document.querySelectorAll('.reveal-section').forEach((section) => {
     gsap.from(section, {
-        opacity: 0, y: 100, duration: 1.5,
-        scrollTrigger: { trigger: section, start: "top 80%" }
+        opacity: 0, y: 50, duration: 1.2,
+        scrollTrigger: { trigger: section, start: "top 85%" }
     });
 });
