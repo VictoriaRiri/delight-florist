@@ -4,50 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Delight Florist</title>
-    
     <link rel="icon" type="image/jpeg" href="images/3613.jpg">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#FCF9F5]">
 
-    <nav class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 transition-all duration-700 bg-white/80 backdrop-blur-md shadow-sm">
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center gap-4">
-                <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
-                <h1 class="text-xl font-serif tracking-tighter">Delight Florist</h1>
-            </a>
-        </div>
-        <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-medium">
-            <a href="index.html" class="hover:text-pink-500 transition">Home</a>
-            <a href="gallery.html" class="text-pink-800">Gallery</a>
-            <a href="tel:0769875366" class="bg-[#1a1a1a] text-white px-8 py-3 rounded-full hover:bg-pink-900 transition">Order Now</a>
+    <nav class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 bg-[#FCF9F5]/90 backdrop-blur-md">
+        <a href="index.html" class="text-xl font-serif text-[#8B5E5E]">Delight Florist</a>
+        <div class="space-x-8 uppercase tracking-widest text-[10px] font-bold">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="text-[#D4A5A5]">Gallery</a>
         </div>
     </nav>
 
     <main class="pt-48 pb-20 container mx-auto px-6">
-        <header class="text-center mb-24 max-w-2xl mx-auto">
-            <h1 class="text-6xl font-serif mb-6 italic">Our Masterpieces</h1>
-            <p class="text-gray-500 font-light text-lg">A visual journey through our most cherished seasonal arrangements.</p>
-        </header>
-
-        <div class="masonry-grid">
-            <div class="masonry-item"><img src="images/3560.jpg" class="w-full rounded-3xl shadow-lg" alt="Roses"></div>
-            <div class="masonry-item"><img src="images/3608.jpg" class="w-full rounded-3xl shadow-lg" alt="Purple Blooms"></div>
-            <div class="masonry-item"><img src="images/3575.jpg" class="w-full rounded-3xl shadow-lg" alt="Bouquet"></div>
-            <div class="masonry-item"><img src="images/3581.jpg" class="w-full rounded-3xl shadow-lg" alt="Yellow Mums"></div>
-            <div class="masonry-item"><img src="images/3563.jpg" class="w-full rounded-3xl shadow-lg" alt="Pink Roses"></div>
-            <div class="masonry-item"><img src="images/3584.jpg" class="w-full rounded-3xl shadow-lg" alt="Orange Roses"></div>
-            <div class="masonry-item"><img src="images/3572.jpg" class="w-full rounded-3xl shadow-lg" alt="White and Blue Bouquet"></div>
-            <div class="masonry-item"><img src="images/3569.jpg" class="w-full rounded-3xl shadow-lg" alt="Pink Mix"></div>
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
+            <div class="break-inside-avoid"><img src="images/3560.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 1"></div>
+            <div class="break-inside-avoid"><img src="images/3608.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 2"></div>
+            <div class="break-inside-avoid"><img src="images/3575.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 3"></div>
+            <div class="break-inside-avoid"><img src="images/3581.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 4"></div>
+            <div class="break-inside-avoid"><img src="images/3563.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 5"></div>
+            <div class="break-inside-avoid"><img src="images/3584.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 6"></div>
+            <div class="break-inside-avoid"><img src="images/3557.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 7"></div>
         </div>
     </main>
-
-    <footer class="text-center py-20 border-t border-gray-100 bg-white">
-        <p class="font-serif italic text-2xl mb-4">Delight Florist</p>
-        <p class="text-xs tracking-[0.3em] text-gray-400 uppercase">Premium Nairobi Floral Studio</p>
-    </footer>
-
 </body>
 </html>
