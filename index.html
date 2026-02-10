@@ -13,12 +13,12 @@
 <body class="bg-[#FCF9F5] text-[#4A4440] overflow-x-hidden">
 
     <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FDF7F2]">
-        <img src="images/3613.jpg" alt="Logo" class="w-24 h-24 rounded-full mb-6 animate-pulse">
-        <p class="serif italic text-xl tracking-widest text-[#D4A5A5]">Delight Florist</p>
-        <div id="petal-container-loader" class="absolute inset-0 pointer-events-none"></div>
+        <div id="loader-petal-container" class="absolute inset-0 pointer-events-none"></div>
+        <img src="images/3613.jpg" alt="Logo" class="w-20 h-20 rounded-full mb-4 z-10 shadow-lg">
+        <p class="font-serif italic text-xl tracking-widest text-[#D4A5A5] z-10">Delight Florist</p>
     </div>
 
-    <nav id="main-nav" class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 transition-all duration-700">
+    <nav id="main-nav" class="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 transition-all duration-700">
         <div class="flex items-center gap-4">
             <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
             <h1 class="text-xl font-serif tracking-tighter text-[#8B5E5E]">Delight Florist</h1>
@@ -26,80 +26,65 @@
         <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-bold">
             <a href="index.html" class="hover:text-[#D4A5A5] transition">Home</a>
             <a href="gallery.html" class="hover:text-[#D4A5A5] transition">Gallery</a>
-            <a href="https://wa.me/254769875366" target="_blank" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Contact / Order</a>
+            <a href="https://wa.me/254769875366" target="_blank" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition">Contact / Order</a>
         </div>
     </nav>
 
     <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-[#FCF9F5]">
-        <div id="hero-petal-canvas" class="absolute inset-0 pointer-events-none"></div>
+        <div id="hero-petal-container" class="absolute inset-0 pointer-events-none"></div>
         
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <span class="uppercase tracking-[0.4em] text-[10px] mb-8 block text-[#8B5E5E] font-bold">Premium Nairobi Florist</span>
-            <h2 class="text-4xl md:text-6xl font-serif mb-10 leading-tight text-[#4A4440]" id="hero-title">
+            <span class="uppercase tracking-[0.4em] text-[10px] mb-8 block text-[#8B5E5E] font-bold">Nairobi, Kenya</span>
+            <h2 class="text-4xl md:text-6xl font-serif mb-6 leading-tight text-[#4A4440] opacity-0" id="hero-title">
                 Some moments ask to be <br><span class="italic text-[#D4A5A5]">spoken softly</span>.
             </h2>
-            <div class="space-y-4 text-[#8B5E5E] font-light italic text-lg md:text-xl opacity-0" id="hero-poem">
+            <div class="text-[#8B5E5E] font-light italic text-lg md:text-xl opacity-0 space-y-2" id="hero-poem">
                 <p>We answer with petals,</p>
                 <p>with color arranged into care,</p>
-                <p>with flowers that say</p>
-                <p>what hands sometimes cannot.</p>
-            </div>
-            <div class="mt-12 opacity-0" id="hero-cta">
-                <a href="https://wa.me/254769875366" class="bg-[#D4A5A5] text-white px-10 py-4 rounded-full font-bold">Start a Conversation</a>
+                <p>with flowers that say what hands sometimes cannot.</p>
             </div>
         </div>
     </section>
 
-    <main class="container mx-auto px-6 py-24">
+    <main class="container mx-auto px-6 py-10">
         
-        <section class="reveal-section flex flex-col md:flex-row items-center gap-16 md:gap-32 my-40">
-            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
-                <img src="https://wallpapers.com/images/hd/flower-shop-1242-x-1544-wallpaper-71gq381v8dxrs6bl.jpg" class="w-full h-[600px] object-cover" alt="Flower Shop">
+        <section class="reveal-section flex flex-col md:flex-row items-center gap-16 md:gap-24 my-32">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-sm">
+                <img src="https://wallpapers.com/images/hd/flower-shop-1242-x-1544-wallpaper-71gq381v8dxrs6bl.jpg" class="w-full h-[500px] object-cover" alt="Floral Shop">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
-                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">Grounded Presence</h3>
-                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
+                <h3 class="text-2xl font-serif text-[#8B5E5E] italic">Grounded Presence</h3>
+                <div class="text-lg text-gray-500 font-light leading-relaxed">
                     <p>Flowers are not decorations.</p>
                     <p>They are pauses in a busy world,</p>
-                    <p>gestures of presence,</p>
-                    <p>reminders that someone</p>
+                    <p>gestures of presence, reminders that someone</p>
                     <p>took the time to choose beauty.</p>
                 </div>
             </div>
         </section>
 
-        <section class="reveal-section flex flex-col md:flex-row-reverse items-center gap-16 md:gap-32 my-40">
-            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
-                <img src="https://i.pinimg.com/736x/73/d0/06/73d0062538071b2659c5a284b724132a.jpg" class="w-full h-[600px] object-cover" alt="Floral Arrangement">
+        <section class="reveal-section flex flex-col md:flex-row-reverse items-center gap-16 md:gap-24 my-32">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-sm">
+                <img src="https://i.pinimg.com/736x/73/d0/06/73d0062538071b2659c5a284b724132a.jpg" class="w-full h-[500px] object-cover" alt="Arrangement">
             </div>
             <div class="w-full md:w-1/2 space-y-6 md:text-right">
-                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">The Listening Art</h3>
-                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
-                    <p>Each arrangement begins</p>
-                    <p>with listening —</p>
-                    <p>to the moment,</p>
-                    <p>to the meaning,</p>
+                <h3 class="text-2xl font-serif text-[#8B5E5E] italic">The Listening Art</h3>
+                <div class="text-lg text-gray-500 font-light leading-relaxed">
+                    <p>Each arrangement begins with listening —</p>
+                    <p>to the moment, to the meaning,</p>
                     <p>to what the flowers are already becoming.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="reveal-section flex flex-col md:flex-row items-center gap-16 md:gap-32 my-40">
-            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
-                <img src="https://c8.alamy.com/comp/T9RBB7/close-up-large-beautiful-bouquet-of-mixed-flowers-flower-background-and-wallpaper-floral-shop-concept-beautiful-fresh-cut-bouquet-flowers-T9RBB7.jpg" class="w-full h-[600px] object-cover" alt="Mixed Bouquet">
-            </div>
-            <div class="w-full md:w-1/2 space-y-6">
-                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">Moments of Light</h3>
-                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
-                    <p>These are not just flowers we sell.</p>
-                    <p>They are celebrations held gently,</p>
-                    <p>farewells offered with care,</p>
-                    <p>and everyday joys</p>
-                    <p>given a little more light.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white py-20 px-
+    <footer class="bg-white py-20 px-6 border-t border-[#F5E6E0] text-center">
+        <h4 class="text-xl font-serif text-[#8B5E5E] mb-4">If you have a moment to mark, or a feeling to give form —</h4>
+        <p class="text-gray-400 italic mb-8">we would be honored to create something for you.</p>
+        <a href="https://wa.me/254769875366" class="bg-[#D4A5A5] text-white px-10 py-4 rounded-full font-bold">WhatsApp Us</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
