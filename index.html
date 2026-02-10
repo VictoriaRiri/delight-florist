@@ -12,99 +12,67 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#FCF9F5] text-[#2D2D2D] overflow-x-hidden">
-
-    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FDF7F2]">
-        <img src="images/3613.jpg" alt="Logo" class="w-24 h-24 rounded-full mb-6 animate-pulse">
-        <p class="serif italic text-2xl tracking-widest text-gray-400">Delight Florist</p>
-        <div id="petal-container" class="absolute inset-0 pointer-events-none"></div>
-    </div>
+<body class="bg-[#FCF9F5] text-[#4A4440] overflow-x-hidden">
 
     <nav id="main-nav" class="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 transition-all duration-700">
         <div class="flex items-center gap-4">
             <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
-            <h1 class="text-xl font-serif tracking-tighter">Delight Florist</h1>
+            <h1 class="text-xl font-serif tracking-tighter text-[#8B5E5E]">Delight Florist</h1>
         </div>
-        <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-medium">
-            <a href="index.html" class="hover:text-pink-500 transition">Home</a>
-            <a href="gallery.html" class="hover:text-pink-500 transition">Gallery</a>
-            <a href="tel:0769875366" class="bg-[#1a1a1a] text-white px-8 py-3 rounded-full hover:bg-pink-900 transition shadow-lg">Contact / Order</a>
+        <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-bold">
+            <a href="index.html" class="hover:text-[#D4A5A5] transition">Home</a>
+            <a href="gallery.html" class="hover:text-[#D4A5A5] transition">Gallery</a>
+            <a href="tel:0769875366" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Contact / Order</a>
         </div>
     </nav>
 
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div class="absolute inset-0 z-0">
-            <img src="images/3557.jpg" id="hero-bg" class="w-full h-full object-cover scale-110 opacity-30" alt="Editorial Background">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#FCF9F5]"></div>
+        <div class="absolute inset-0 z-0 flex">
+            <div class="w-1/2 h-full">
+                <img src="images/3569.jpg" class="w-full h-full object-cover opacity-60" alt="Floral Art">
+            </div>
+            <div class="w-1/2 h-full bg-[#F5E6E0] flex items-center justify-center">
+                <img src="images/3572.jpg" class="w-3/4 h-3/4 object-cover rounded-full shadow-2xl border-8 border-white" alt="Featured Bouquet">
+            </div>
         </div>
         
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-            <span class="uppercase tracking-[0.4em] text-[10px] mb-6 block text-gray-500 font-bold">Premium Nairobi Florist</span>
-            
-            <h2 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight opacity-0" id="hero-title">
-                Arrangements that <br><span class="italic text-pink-900/80">speak emotions</span>.
+            <span class="uppercase tracking-[0.4em] text-[10px] mb-6 block text-[#8B5E5E] font-bold">Premium Nairobi Florist</span>
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight text-[#4A4440]" id="hero-title">
+                Arrangements that <br><span class="italic text-[#D4A5A5]">speak emotions</span>.
             </h2>
-            
-            <p class="text-base md:text-lg text-gray-600 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
-                Hand-crafted bouquets for weddings, sympathy, and the quiet moments in between.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="gallery.html" class="w-full md:w-auto border border-black px-10 py-4 rounded-full hover:bg-black hover:text-white transition-all duration-500">
-                    View Collections
-                </a>
-                <a href="tel:0745816937" class="w-full md:w-auto bg-pink-100 text-pink-900 px-10 py-4 rounded-full hover:bg-pink-200 transition-all duration-500">
-                    Book Consultation
-                </a>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
+                <a href="gallery.html" class="w-full md:w-auto border border-[#D4A5A5] text-[#8B5E5E] px-10 py-4 rounded-full hover:bg-[#D4A5A5] hover:text-white transition-all duration-500 font-bold">View Collections</a>
+                <a href="tel:0745816937" class="w-full md:w-auto bg-[#FDF7F2] text-[#8B5E5E] px-10 py-4 rounded-full hover:shadow-lg transition-all duration-500 font-bold">Book Consultation</a>
             </div>
         </div>
     </section>
 
     <main class="container mx-auto px-6 py-24">
         <section class="reveal-section flex flex-col md:flex-row items-center gap-20 my-40">
-            <div class="w-full md:w-1/2 overflow-hidden rounded-[60px] shadow-2xl diagonal-mask">
-                <img src="images/3584.jpg" class="w-full hover:scale-110 transition-transform duration-1000" alt="Roses">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-[#F5E6E0] rounded-[60px] -z-10 rotate-3"></div>
+                <img src="images/3575.jpg" class="w-full rounded-[60px] shadow-xl" alt="Bespoke Design">
             </div>
             <div class="w-full md:w-1/2 space-y-8">
-                <span class="text-pink-800 font-serif italic text-xl">The Signature Touch</span>
-                <h3 class="text-5xl font-serif">Bespoke Bouquets</h3>
+                <span class="text-[#D4A5A5] font-serif italic text-xl">The Signature Touch</span>
+                <h3 class="text-5xl font-serif text-[#4A4440]">Bespoke Artistry</h3>
                 <p class="text-gray-500 leading-loose text-lg font-light">
-                    Every flower is selected for its longevity and aesthetic harmony. We don't just assemble; we curate a visual narrative for your home or gift.
+                    Every-crafted selection is chosen for aesthetic harmony. We don't just assemble; we curate the visual moments for your home.
                 </p>
-                <div class="pt-4">
-                    <a href="tel:0769875366" class="text-sm uppercase tracking-widest border-b border-black pb-2">Talk to our Florist</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="reveal-section flex flex-col md:flex-row-reverse items-center gap-20 my-40">
-            <div class="w-full md:w-1/2 overflow-hidden rounded-[60px] shadow-2xl diagonal-mask">
-                <img src="images/3572.jpg" class="w-full hover:scale-110 transition-transform duration-1000" alt="Ceremonial">
-            </div>
-            <div class="w-full md:w-1/2 space-y-8">
-                <span class="text-pink-800 font-serif italic text-xl">Ceremonial Artistry</span>
-                <h3 class="text-5xl font-serif">Weddings & Events</h3>
-                <p class="text-gray-500 leading-loose text-lg font-light">
-                    Transforming spaces into living gardens. From bridal bouquets to full-scale venue floral installations, we specialize in meaningful atmospheres.
-                </p>
-                <div class="pt-4">
-                    <a href="tel:0745816937" class="text-sm uppercase tracking-widest border-b border-black pb-2">Inquire for Events</a>
-                </div>
+                <a href="tel:0769875366" class="inline-block bg-[#D4A5A5] text-white px-8 py-3 rounded-full">Order Now</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-white py-20 px-6 border-t border-gray-100">
+    <footer class="bg-white py-20 px-6 border-t border-[#F5E6E0]">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <img src="images/3613.jpg" class="w-20 h-20 rounded-full mx-auto" alt="Footer Logo">
-            <h4 class="text-3xl font-serif">Delight Florist</h4>
-            <p class="text-gray-400 font-light">Nairobi, Kenya | 0769875366 / 0745816937</p>
+            <h4 class="text-3xl font-serif text-[#8B5E5E]">Delight Florist</h4>
+            <p class="text-[#D4A5A5] font-light">Nairobi, Kenya | 0769875366</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
     <script src="script.js"></script>
 </body>
 </html>
