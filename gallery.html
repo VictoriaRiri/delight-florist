@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Delight Florist</title>
+    <title>Gallery </title>
     <link rel="icon" type="image/jpeg" href="images/3613.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#FCF9F5]">
 
-    <nav class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 bg-[#FCF9F5]/90 backdrop-blur-md">
+    <nav class="fixed top-0 w-full p-8 z-50 flex justify-between">
         <a href="index.html" class="text-xl font-serif text-[#8B5E5E]">Delight Florist</a>
-        <div class="space-x-8 uppercase tracking-widest text-[10px] font-bold">
-            <a href="index.html">Home</a>
-            <a href="gallery.html" class="text-[#D4A5A5]">Gallery</a>
-        </div>
+        <a href="index.html" class="uppercase text-[10px] tracking-widest font-bold">Back Home</a>
     </nav>
 
-    <main class="pt-48 pb-20 container mx-auto px-6">
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-            <div class="break-inside-avoid"><img src="images/3560.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 1"></div>
-            <div class="break-inside-avoid"><img src="images/3608.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 2"></div>
-            <div class="break-inside-avoid"><img src="images/3575.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 3"></div>
-            <div class="break-inside-avoid"><img src="images/3581.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 4"></div>
-            <div class="break-inside-avoid"><img src="images/3563.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 5"></div>
-            <div class="break-inside-avoid"><img src="images/3584.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 6"></div>
-            <div class="break-inside-avoid"><img src="images/3557.jpg" class="w-full rounded-2xl shadow-sm hover:scale-[1.02] transition" alt="Floral 7"></div>
+    <main class="relative min-h-screen pt-32 pb-40 px-6 overflow-hidden">
+        <h2 class="text-center font-serif italic text-4xl text-[#8B5E5E] mb-20">Our Work</h2>
+        
+        <div class="vision-board relative w-full max-w-6xl mx-auto h-[1200px] md:h-[1600px]">
+            <div class="vision-item top-0 left-0 w-64 rotate-[-3deg] shadow-xl"><img src="images/3560.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-20 right-10 w-72 rotate-[5deg] shadow-lg"><img src="images/3608.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[30%] left-[20%] w-56 rotate-[2deg] shadow-2xl z-10"><img src="images/3575.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[40%] right-[15%] w-80 rotate-[-4deg] shadow-lg"><img src="images/3581.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[60%] left-5 w-64 rotate-[6deg] shadow-xl"><img src="images/3563.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[70%] right-[30%] w-72 rotate-[-2deg] shadow-2xl z-10"><img src="images/3584.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[85%] left-[10%] w-56 rotate-[4deg] shadow-lg"><img src="images/3557.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[15%] left-[45%] w-48 rotate-[-8deg] shadow-sm"><img src="images/3613.jpg" class="rounded-lg"></div>
+            <div class="vision-item bottom-0 right-0 w-64 rotate-[3deg] shadow-lg"><img src="images/3569.jpg" class="rounded-lg"></div>
+            <div class="vision-item top-[50%] left-[40%] w-60 rotate-[1deg] shadow-xl"><img src="images/3572.jpg" class="rounded-lg"></div>
         </div>
     </main>
+
 </body>
 </html>
