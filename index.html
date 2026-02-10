@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delight Florist | Curated Floral Studio</title>
-    
+    <title>Delight Florist | Premium Nairobi Studio</title>
     <link rel="icon" type="image/jpeg" href="images/3613.jpg">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -14,7 +12,13 @@
 </head>
 <body class="bg-[#FCF9F5] text-[#4A4440] overflow-x-hidden">
 
-    <nav id="main-nav" class="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 transition-all duration-700">
+    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FDF7F2]">
+        <img src="images/3613.jpg" alt="Logo" class="w-24 h-24 rounded-full mb-6 animate-pulse">
+        <p class="serif italic text-xl tracking-widest text-[#D4A5A5]">Delight Florist</p>
+        <div id="petal-container-loader" class="absolute inset-0 pointer-events-none"></div>
+    </div>
+
+    <nav id="main-nav" class="fixed top-0 w-full p-8 md:p-12 flex justify-between items-center z-50 transition-all duration-700">
         <div class="flex items-center gap-4">
             <img src="images/3613.jpg" class="w-10 h-10 rounded-full" alt="Delight Logo">
             <h1 class="text-xl font-serif tracking-tighter text-[#8B5E5E]">Delight Florist</h1>
@@ -22,57 +26,80 @@
         <div class="hidden md:flex space-x-12 uppercase tracking-[0.2em] text-[10px] items-center font-bold">
             <a href="index.html" class="hover:text-[#D4A5A5] transition">Home</a>
             <a href="gallery.html" class="hover:text-[#D4A5A5] transition">Gallery</a>
-            <a href="tel:0769875366" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Contact / Order</a>
+            <a href="https://wa.me/254769875366" target="_blank" class="bg-[#D4A5A5] text-white px-8 py-3 rounded-full hover:bg-[#B88686] transition shadow-md">Contact / Order</a>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div class="absolute inset-0 z-0 flex">
-            <div class="w-1/2 h-full">
-                <img src="images/3569.jpg" class="w-full h-full object-cover opacity-60" alt="Floral Art">
-            </div>
-            <div class="w-1/2 h-full bg-[#F5E6E0] flex items-center justify-center">
-                <img src="images/3572.jpg" class="w-3/4 h-3/4 object-cover rounded-full shadow-2xl border-8 border-white" alt="Featured Bouquet">
-            </div>
-        </div>
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-[#FCF9F5]">
+        <div id="hero-petal-canvas" class="absolute inset-0 pointer-events-none"></div>
         
-        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
-            <span class="uppercase tracking-[0.4em] text-[10px] mb-6 block text-[#8B5E5E] font-bold">Premium Nairobi Florist</span>
-            <h2 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight text-[#4A4440]" id="hero-title">
-                Arrangements that <br><span class="italic text-[#D4A5A5]">speak emotions</span>.
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <span class="uppercase tracking-[0.4em] text-[10px] mb-8 block text-[#8B5E5E] font-bold">Premium Nairobi Florist</span>
+            <h2 class="text-4xl md:text-6xl font-serif mb-10 leading-tight text-[#4A4440]" id="hero-title">
+                Some moments ask to be <br><span class="italic text-[#D4A5A5]">spoken softly</span>.
             </h2>
-            <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
-                <a href="gallery.html" class="w-full md:w-auto border border-[#D4A5A5] text-[#8B5E5E] px-10 py-4 rounded-full hover:bg-[#D4A5A5] hover:text-white transition-all duration-500 font-bold">View Collections</a>
-                <a href="tel:0745816937" class="w-full md:w-auto bg-[#FDF7F2] text-[#8B5E5E] px-10 py-4 rounded-full hover:shadow-lg transition-all duration-500 font-bold">Book Consultation</a>
+            <div class="space-y-4 text-[#8B5E5E] font-light italic text-lg md:text-xl opacity-0" id="hero-poem">
+                <p>We answer with petals,</p>
+                <p>with color arranged into care,</p>
+                <p>with flowers that say</p>
+                <p>what hands sometimes cannot.</p>
+            </div>
+            <div class="mt-12 opacity-0" id="hero-cta">
+                <a href="https://wa.me/254769875366" class="bg-[#D4A5A5] text-white px-10 py-4 rounded-full font-bold">Start a Conversation</a>
             </div>
         </div>
     </section>
 
     <main class="container mx-auto px-6 py-24">
-        <section class="reveal-section flex flex-col md:flex-row items-center gap-20 my-40">
-            <div class="w-full md:w-1/2 relative">
-                <div class="absolute -inset-4 bg-[#F5E6E0] rounded-[60px] -z-10 rotate-3"></div>
-                <img src="images/3575.jpg" class="w-full rounded-[60px] shadow-xl" alt="Bespoke Design">
+        
+        <section class="reveal-section flex flex-col md:flex-row items-center gap-16 md:gap-32 my-40">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
+                <img src="https://wallpapers.com/images/hd/flower-shop-1242-x-1544-wallpaper-71gq381v8dxrs6bl.jpg" class="w-full h-[600px] object-cover" alt="Flower Shop">
             </div>
-            <div class="w-full md:w-1/2 space-y-8">
-                <span class="text-[#D4A5A5] font-serif italic text-xl">The Signature Touch</span>
-                <h3 class="text-5xl font-serif text-[#4A4440]">Bespoke Artistry</h3>
-                <p class="text-gray-500 leading-loose text-lg font-light">
-                    Every-crafted selection is chosen for aesthetic harmony. We don't just assemble; we curate the visual moments for your home.
-                </p>
-                <a href="tel:0769875366" class="inline-block bg-[#D4A5A5] text-white px-8 py-3 rounded-full">Order Now</a>
+            <div class="w-full md:w-1/2 space-y-6">
+                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">Grounded Presence</h3>
+                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
+                    <p>Flowers are not decorations.</p>
+                    <p>They are pauses in a busy world,</p>
+                    <p>gestures of presence,</p>
+                    <p>reminders that someone</p>
+                    <p>took the time to choose beauty.</p>
+                </div>
             </div>
         </section>
+
+        <section class="reveal-section flex flex-col md:flex-row-reverse items-center gap-16 md:gap-32 my-40">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
+                <img src="https://i.pinimg.com/736x/73/d0/06/73d0062538071b2659c5a284b724132a.jpg" class="w-full h-[600px] object-cover" alt="Floral Arrangement">
+            </div>
+            <div class="w-full md:w-1/2 space-y-6 md:text-right">
+                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">The Listening Art</h3>
+                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
+                    <p>Each arrangement begins</p>
+                    <p>with listening —</p>
+                    <p>to the moment,</p>
+                    <p>to the meaning,</p>
+                    <p>to what the flowers are already becoming.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal-section flex flex-col md:flex-row items-center gap-16 md:gap-32 my-40">
+            <div class="w-full md:w-1/2 overflow-hidden rounded-[40px] shadow-lg">
+                <img src="https://c8.alamy.com/comp/T9RBB7/close-up-large-beautiful-bouquet-of-mixed-flowers-flower-background-and-wallpaper-floral-shop-concept-beautiful-fresh-cut-bouquet-flowers-T9RBB7.jpg" class="w-full h-[600px] object-cover" alt="Mixed Bouquet">
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <h3 class="text-3xl font-serif text-[#8B5E5E] italic">Moments of Light</h3>
+                <div class="text-xl text-gray-600 font-light leading-relaxed space-y-2">
+                    <p>These are not just flowers we sell.</p>
+                    <p>They are celebrations held gently,</p>
+                    <p>farewells offered with care,</p>
+                    <p>and everyday joys</p>
+                    <p>given a little more light.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-white py-20 px-6 border-t border-[#F5E6E0]">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
-            <img src="images/3613.jpg" class="w-20 h-20 rounded-full mx-auto" alt="Footer Logo">
-            <h4 class="text-3xl font-serif text-[#8B5E5E]">Delight Florist</h4>
-            <p class="text-[#D4A5A5] font-light">Nairobi, Kenya | 0769875366</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <footer class="bg-white py-20 px-
