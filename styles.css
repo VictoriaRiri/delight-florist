@@ -1,26 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;600&display=swap');
 
-body { font-family: 'Outfit', sans-serif; background-color: #FCF9F5; }
+body { font-family: 'Outfit', sans-serif; background-color: #FCF9F5; line-height: 1.7; }
 .font-serif { font-family: 'Playfair Display', serif; }
 
-/* The Petals */
 .petal {
     position: absolute;
     border-radius: 50% 0 50% 50%;
-    opacity: 0.7;
+    opacity: 0.6;
     pointer-events: none;
     z-index: 5;
 }
 
-/* Vision Board Hover */
-.vision-item { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-.vision-item:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 50; }
+/* Vision Board Effect */
+.vision-item { transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; }
+.vision-item:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 50; }
 
-/* Sticky Nav Style */
 .nav-scrolled {
     background: rgba(252, 249, 245, 0.95);
     backdrop-filter: blur(10px);
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-    box-shadow: 0 4px 20px rgba(139, 94, 94, 0.05);
+    padding: 1rem 3rem !important;
 }
