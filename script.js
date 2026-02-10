@@ -1,71 +1,91 @@
-// Register GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. Petal Loading Animation
+// 1. Petal Loader
 function createPetal() {
     const container = document.getElementById('petal-container');
+    if(!container) return;
     const petal = document.createElement('div');
     petal.className = 'petal';
     
-    // Random sizes and positions
-    const size = Math.random() * 15 + 10 + 'px';
+    const size = Math.random() * 20 + 10 + 'px';
     petal.style.width = size;
     petal.style.height = size;
     petal.style.left = Math.random() * 100 + 'vw';
-    petal.style.top = '-5%';
+    petal.style.top = '-10%';
 
     container.appendChild(petal);
 
     gsap.to(petal, {
         y: '110vh',
-        x: '+=100',
-        rotation: 360,
-        duration: Math.random() * 3 + 2,
+        x: '+=150',
+        rotation: 720,
+        duration: Math.random() * 4 + 3,
         ease: "none",
         onComplete: () => petal.remove()
     });
 }
 
-// Start petals
-const petalInterval = setInterval(createPetal, 300);
+const petalInterval = setInterval(createPetal, 400);
 
-// Close Loader
 window.addEventListener('load', () => {
     setTimeout(() => {
         clearInterval(petalInterval);
         gsap.to("#loader", {
             opacity: 0,
             duration: 1.5,
+            ease: "power2.inOut",
             onComplete: () => {
                 document.getElementById('loader').style.display = 'none';
-                animateHero();
+                // Hero Entrance
+                gsap.to("#hero-title", { opacity: 1, y: -30, duration: 1.8, ease: "expo.out" });
             }
         });
-    }, 3000);
+    }, 2500);
 });
 
-// 2. Hero Animation
-function animateHero() {
-    gsap.to("#hero-title", { opacity: 1, y: -20, duration: 1.5, ease: "power2.out" });
-}
+// 2. Sticky Header Animation
+ScrollTrigger.create({
+    start: "top -100",
+    onUpdate: (self) => {
+        const nav = document.getElementById('main-nav');
+        if (self.direction === 1) {
+            nav.classList.add('nav-scrolled');
+        } else if (self.scroll() < 100) {
+            nav.classList.remove('nav-scrolled');
+        }
+    }
+});
 
 // 3. Diagonal Scroll Reveals
-const sections = document.querySelectorAll('.reveal-section');
-
-sections.forEach((section) => {
+document.querySelectorAll('.reveal-section').forEach((section) => {
     const img = section.querySelector('.diagonal-mask');
     
-    gsap.fromTo(img, 
-        { clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }, 
-        { 
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            duration: 1.5,
-            ease: "power4.inOut",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
+    gsap.to(img, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        scrollTrigger: {
+            trigger: section,
+            start: "top 75%",
+            toggleActions: "play none none none"
         }
-    );
+    });
+
+    gsap.from(section.querySelector('div:not(.diagonal-mask)'), {
+        autoAlpha: 0,
+        x: 50,
+        duration: 1.2,
+        scrollTrigger: {
+            trigger: section,
+            start: "top 75%"
+        }
+    });
+});
+
+// 4. Parallax Background
+gsap.to("#hero-bg", {
+    yPercent: 30,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#home",
+        scrub: true
+    }
 });
