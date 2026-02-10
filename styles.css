@@ -1,28 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@200;300;400;500&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .font-serif {
     font-family: 'Playfair Display', serif;
 }
 
-/* Diagonal Masking for the Sliding Effect */
+/* Diagonal Masking for Premium Reveal */
 .diagonal-mask {
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.reveal-section.active .diagonal-mask {
-    /* Initially hidden, we reveal it via JS or this class */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
+/* Petal Loading Elements */
 .petal {
     position: absolute;
-    background: #FFD1DC;
+    background: #f8dae2;
     border-radius: 50% 0 50% 50%;
-    opacity: 0.6;
+    opacity: 0.5;
     pointer-events: none;
+    filter: blur(1px);
+}
+
+/* Navigation Scroll Effect Classes */
+.nav-scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Gallery Masonry (For gallery.html) */
+.masonry-grid {
+    column-count: 3;
+    column-gap: 2rem;
+}
+@media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+@media (max-width: 640px) { .masonry-grid { column-count: 1; } }
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 2rem;
 }
